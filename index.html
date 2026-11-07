@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>2nd Annual Chili Bowl! — Voting, Scorecards & Awards</title>
+    <meta
+      name="description"
+      content="Scan one QR code, rank your top 3 chilis, and watch the crowd results tally live."
+    />
+    <meta property="og:title" content="2nd Annual Chili Bowl! — Voting Dashboard" />
+    <meta
+      property="og:description"
+      content="Scan, pick your 1st, 2nd and 3rd favorite chili. One ballot per phone."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@600,500&f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 29c-6 0-10-4.2-10-9.6C6 13 11 9 14 3c1.6 3.4 1 6 3.5 7.6C20 12 20 15 20 15s2-1.6 2.4-4C25 14 26 16.6 26 19.4 26 24.8 22 29 16 29z' fill='%23e2492b'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <header class="topbar no-print">
+      <div class="topbar-in">
+        <div class="brand">
+          <!-- Logo: chili pepper drawn as a single ember stroke -->
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-label="Chili Cook-Off logo" role="img">
+            <path
+              d="M20.5 7.5c0-2.2 1.3-3.9 3.4-4.5"
+              stroke="currentColor"
+              stroke-width="2.1"
+              stroke-linecap="round"
+            />
+            <path
+              d="M20.6 8.2c3.6 1.3 5.7 4.9 5.2 9.1-.6 5.4-5.2 9.6-11 10.5-3.6.6-6.6-.6-7.6-2.7-.8-1.7.2-3 2-3.3 2.6-.4 4.4-1.6 5.6-3.9 1.1-2.1 1.3-4.4.9-6.9-.3-2 .8-3.4 2.6-3.4.8 0 1.6.2 2.3.6z"
+              stroke="currentColor"
+              stroke-width="2.1"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <div class="brand-text">
+            <div class="brand-name" id="brandName">2nd Annual Chili Bowl!</div>
+            <div class="brand-sub" id="brandSub">Voting HQ</div>
+          </div>
+        </div>
+        <nav class="tabs" id="tabs" aria-label="Sections">
+          <a class="tab" href="#/dashboard" data-route="dashboard" data-org-only>Dashboard</a>
+          <a class="tab" href="#/vote" data-route="vote">Taste &amp; Vote</a>
+          <a class="tab" href="#/results" data-route="results">Awards</a>
+          <a class="tab" href="#/entries" data-route="entries" data-org-only>Entries</a>
+          <a class="tab" href="#/scorecards" data-route="scorecards" data-org-only>Print Kit</a>
+        </nav>
+        <button class="icon-btn" id="themeToggle" title="Toggle light / dark" aria-label="Toggle light or dark theme">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="view" aria-live="polite">
+      <div class="grid g3">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+    </main>
+
+    <div class="toast-host" id="toasts" aria-live="assertive"></div>
+
+    <script src="vendor/qrcode-generator.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
